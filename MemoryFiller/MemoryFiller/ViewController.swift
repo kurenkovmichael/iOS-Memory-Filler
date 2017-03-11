@@ -165,4 +165,3 @@ class ViewController: UIViewController, MFMemoryFillerDelegate {
         updateSubtitle()
     }
 }
-

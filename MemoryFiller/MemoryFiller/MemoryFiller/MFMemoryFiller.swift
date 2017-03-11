@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MFMemoryFiller: NSObject {
     
     public enum State : Int {
@@ -169,7 +168,7 @@ class MFMemoryFiller: NSObject {
     private func crateRandomData(size : Int) -> Data! {
         //http://stackoverflow.com/questions/4917968/best-way-to-generate-nsdata-object-with-random-bytes-of-a-specific-length
 //        let bytes = [UInt32](repeating: 0, count: size / 4).map { _ in arc4random() }
-        let bytes = [UInt32](repeating: 0, count: size / 4).map { _ in 0 }
+        let bytes = [UInt32](repeating: 0, count: size).map { _ in 0 }
         return Data(bytes: bytes, count: bytes.count)
     }
 }
