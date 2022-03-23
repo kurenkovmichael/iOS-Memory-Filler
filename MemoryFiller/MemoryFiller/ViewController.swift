@@ -79,9 +79,9 @@ class ViewController: UIViewController, MFMemoryFillerDelegate {
     func didChangeState(memoryFiller : MFMemoryFiller) {
         DispatchQueue.main.async {
             if (memoryFiller == self.firstMemoryFiller) {
-                self.updateFirstContainerState();
+                self.updateFirstContainerState()
             } else if (memoryFiller == self.secondMemoryFiller) {
-                self.updateSecondContainerState();
+                self.updateSecondContainerState()
             }
         }
     }
@@ -106,19 +106,20 @@ class ViewController: UIViewController, MFMemoryFillerDelegate {
     
     func updateFirstContainerSubtitle() {
         let size = firstMemoryFiller?.getSize()
-        let sizeString = ByteCountFormatter.string(fromByteCount: Int64(size!), countStyle: ByteCountFormatter.CountStyle.file)
+        let sizeString = ByteCountFormatter.string(fromByteCount: Int64(size ?? 0), countStyle: ByteCountFormatter.CountStyle.file)
         firstContainerSubtitleLabel.text = sizeString
     }
     
     func updateSecondContainerSubtitle() {
         let size = secondMemoryFiller?.getSize()
-        let sizeString = ByteCountFormatter.string(fromByteCount: Int64(size!), countStyle: ByteCountFormatter.CountStyle.file)
+        let sizeString = ByteCountFormatter.string(fromByteCount: Int64(size ?? 0), countStyle: ByteCountFormatter.CountStyle.file)
         secondContainerSubtitleLabel.text = sizeString
     }
     
     func updateFirstContainerState() {
         if (firstMemoryFiller?.state == MFMemoryFiller.State.filling ||
-            firstMemoryFiller?.state == MFMemoryFiller.State.cleaning) {
+            firstMemoryFiller?.state == MFMemoryFiller.State.cleaning)
+        {
             
             UIView.animate(withDuration: 0.2) {
                 self.firstContainerActivityIndicator.startAnimating()

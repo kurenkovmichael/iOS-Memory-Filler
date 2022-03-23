@@ -10,7 +10,7 @@ import UIKit
 
 protocol MFMemoryFillerDelegate {
     
-    func didChangeState(memoryFiller : MFMemoryFiller);
-    func didWriteFile(memoryFiller : MFMemoryFiller);
+    func didChangeState(memoryFiller : MFMemoryFiller)
+    func didWriteFile(memoryFiller : MFMemoryFiller)
     
 }
